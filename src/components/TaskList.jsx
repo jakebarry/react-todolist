@@ -1,8 +1,21 @@
 import React from 'react'
+import TaskCard from './TaskCard'
 
-const TaskList = () => {
+const TaskList = (props) => {
+  const { todos } = props
+
+
+
   return (
-    <div>TaskList</div>
+    <ul className='todoList'>
+      {todos.map((todo, todoIndex) => {
+        return (
+          <TaskCard {...props} todo={todo} key={todoIndex} index={todoIndex}>
+            <p>{todo}</p>
+          </TaskCard>
+        )
+      })}
+    </ul>
   )
 }
 

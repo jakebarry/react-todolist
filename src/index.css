@@ -6,6 +6,110 @@ button {
   font-family: 'Inter', system-ui;
 }
 
+/* body {
+  --color-background: #fafafa;
+  --color-foreground: #1f2023;
+}
+
+body.dark {
+  --color-background: #1f2023;
+  --color-foreground: #efefef;
+} */
+
+/* .App-header {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+} */
+
+/* @media (prefers-color-scheme: dark) {
+  body {
+  --color-background: #1f2023;
+  --color-foreground: #efefef;
+  } */
+
+:root {
+  --_hue: 245;
+  --_size: 1.8rem;
+  --_radius: 0.2em;
+  --_tspeed_fast: 180ms;
+  --_tspeed_slow: 300ms;
+  --_ttype_squish: cubic-bezier(0.86, -0.1, 0.27, 1.15);
+
+  /* Light Mode */
+  --bg--light: var(--_hue) 30% 94%;
+  --txt--light: var(--_hue) 40% 5%;
+  --accent--light: var(--_hue) 55% 50%;
+  --accent1--light: 10 80% 60%;
+  --muted--light: var(--_hue) 30% 99%;
+
+  /* Dark Mode */
+  /* --bg--dark: var(--_hue) 15% 10%;
+    --txt--dark: var(--_hue) 30% 88%;
+    --accent--dark: var(--_hue) 50% 50%;
+    --accent1--dark: 10 55% 50%;
+    --muted--dark: var(--_hue) 20% 4%; */
+
+  --bg--dark: black;
+  --txt--dark: white;
+  --accent--dark: rgb(203, 25, 203);
+  --accent1--dark: rgb(224, 128, 33);
+  --muted--dark: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: var(--bg--dark);
+    --txt: var(--txt--dark);
+    --accent: var(--accent--dark);
+    --accent1: var(--accent1--dark);
+    --muted: var(--muted--dark);
+    color-scheme: dark;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Global variables */
+    --bg: var(--bg--light);
+    --txt: var(--txt--light);
+    --accent: var(--accent--light);
+    --accent1: var(--accent1--light);
+    --muted: var(--muted--light);
+    color-scheme: light;
+  }
+}
+
+/* Choose over system theme */
+[color-scheme="dark"] {
+  --bg: var(--bg--dark);
+  --txt: var(--txt--dark);
+  --accent: var(--accent--dark);
+  --accent1: var(--accent1--dark);
+  --muted: var(--muted--dark);
+  color-scheme: dark;
+}
+
+[color-scheme="light"] {
+  --bg: var(--bg--light);
+  --txt: var(--txt--light);
+  --accent: var(--accent--light);
+  --accent1: var(--accent1--light);
+  --muted: var(--muted--light);
+  color-scheme: light;
+}
+
+body {
+  /* min-height: 100vh;
+  display: grid;
+  justify-items: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
+
+  /* background-color: hsl(var(--bg)); */
+  color: hsl(var(--txt));
+}
+
+
 .item {
   /* display: flex; */
   align-items: stretch;
@@ -19,20 +123,21 @@ button {
 
 h1 {
   text-align: center;
- } 
+}
 
 input {
-  width: 50%;
+  width: 40%;
   padding: 5px 5px;
-  margin: 4px 10px;
+  margin: 4px 8px;
   border-radius: 5px;
   border-width: thin;
   border: none;
+  /* background-color: hsl(var(--accent)); */
 }
 
 button {
-  width: 28px;
-  height: 28px;
+  width: 26.5px;
+  height: 26.5px;
   border-radius: 5px;
   background-color: transparent;
   transition-duration: 200ms;
@@ -41,7 +146,7 @@ button {
   border-width: thin;
   outline: none;
   border: none;
-  background: white;
+  /* background: white; */
 }
 
 button:hover {
@@ -60,110 +165,27 @@ button:hover {
   display: flex;
   flex-direction: column;
   padding: 14px;
-  background: #eff6ff;
+  /* background: #eff6ff; */
+  /* background: hsl(var(--bg)); */
   gap: 14px;
 }
 
-  * {
+* {
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #202124;
+  /* color: #202124; */
+  /* color: hsl(var(--txt)); */
 }
 
-
-/* #root {
-  min-height: 100vh;
+.todoList {
   display: flex;
   flex-direction: column;
-  padding: 14px;
-  background: #eff6ff;
-  gap: 14px;
-} */
-
-
-
-
-/* * {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  color: #202124;
+  gap: 10px;
 }
 
-h1,
-h2,
-h3,
-input,
-button {
-  font-family: 'Inter', system-ui;
-}
-
-#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding: 14px;
-  background: #eff6ff;
-  gap: 14px;
-}
-
-header {
-  display: flex;
-  align-items: stretch;
-}
-
-input {
-  width: 10px;
-}
-
-header,
-.main {
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
-  gap: 14px;
-}
-
-header input {
-  flex: 1;
-  border-radius: 14px;
-  outline: none;
-  width: 50%;
-}
-
-header button {
-  border-radius: 14px;
-  background: transparent;
-  transition-duration: 200ms;
-  cursor: pointer;
-}
-
-header button:hover {
-  opacity: 0.7;
-}
-
-header button,
-header input {
-  padding: 14px 18px;
-  border: none;
-  outline: none;
-  background: white;
-}
-
-p {
-  font-size: 0.9em;
-}
-
-.main {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.todoItem {
+/* .todoItem {
   display: flex;
   align-items: center;
   gap: 14px;
@@ -174,13 +196,50 @@ p {
 
 .todoItem p {
   flex: 1;
+  justify-content: end;
+} */
+
+
+.darkButton {
+  /* background-color: hsl(var(--accent));
+  background-color: black; */
+  /* color: white; */
+  /* accent-color: white; */
 }
+
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 5px;
+  border-radius: 8px;
+  /* background: white; */
+  /* background: hsl(var(--bg)); */
+  width: 51%;
+  margin: auto;
+  font-size: small;
+  /* float: left; */
+  /* overflow: hidden; */
+  /* position: relative; */
+  /* /* } */
+}
+
+.todoItem p {
+  flex: 1;
+}
+
 
 .actionsContainer {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
+  /* float: right;  */
+  /* justify-content: space-between; */
+  /* position: absolute; */
+  /* margin-left: 400px; */
 }
+
 
 .actionsContainer button {
   transition-duration: 200ms;
@@ -193,31 +252,17 @@ p {
   opacity: 0.7;
 }
 
-@media (min-width: 640px) {
-
-  header button,
-  header input {
-    font-size: 1.2em;
-  }
-
-  p {
-    font-size: 1em;
-  }
-} */
-
-
-/* .btn {
+.darkMode {
   max-width: fit-content;
   display: flex;
   place-items: center;
   gap: 0.5em;
-  background-color: hsl(var(--accent));
-  color: hsl(var(--bg));
   text-decoration: none;
   padding: 0.5em;
-  border-radius: var(--_radius);
-  box-shadow: 0.05em 0.1em 0.9em hsl(var(--accent) / 0.3),
-    0 0 0 -0.1em hsl(var(--bg)), 0 0 0 -0.2em hsl(var(--accent));
-  transition: box-shadow var(--_tspeed_fast) var(--_ttype_squish),
-    background-color var(--_tspeed_fast) var(--_ttype_squish);
-} */
+  margin: auto;
+  /* color: hsl(var(--txt)); */
+}
+
+.container {
+  margin: 10px
+}
